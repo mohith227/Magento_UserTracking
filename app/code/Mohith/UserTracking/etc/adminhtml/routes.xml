@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="user_tracking" frontName="user_tracking">
+            <module name="Mohith_UserTracking"/>
+        </route>
+    </router>
+</config>

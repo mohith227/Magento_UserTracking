@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <usertracking>
+            <general>
+                <enable>1</enable>
+                <free_geo_ip_url>https://api.freegeoip.app/json/</free_geo_ip_url>
+            </general>
+        </usertracking>
+    </default>
+</config>

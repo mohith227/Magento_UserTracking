@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Visitor Begins-->
+    <preference for="Mohith\UserTracking\Api\VisitorRepositoryInterface"
+                type="Mohith\UserTracking\Model\VisitorRepository"/>
+    <preference for="Mohith\UserTracking\Api\Data\VisitorInterface" type="Mohith\UserTracking\Model\Visitor"/>
+    <preference for="Mohith\UserTracking\Api\Data\VisitorSearchResultInterface"
+                type="Magento\Framework\Api\SearchResults"/>
+    <!-- Visitor Ends-->
+    <!-- Visitor Catalog Begins-->
+    <preference for="Mohith\UserTracking\Api\CatalogRepositoryInterface"
+                type="Mohith\UserTracking\Model\CatalogRepository"/>
+    <preference for="Mohith\UserTracking\Api\Data\CatalogInterface" type="Mohith\UserTracking\Model\Catalog"/>
+    <preference for="Mohith\UserTracking\Api\Data\CatalogSearchResultInterface"
+                type="Magento\Framework\Api\SearchResults"/>
+    <!-- Visitor Catalog Ends-->
+    <!-- Visitor Content Begins-->
+    <preference for="Mohith\UserTracking\Api\ContentRepositoryInterface"
+                type="Mohith\UserTracking\Model\ContentRepository"/>
+    <preference for="Mohith\UserTracking\Api\Data\ContentInterface" type="Mohith\UserTracking\Model\Content"/>
+    <preference for="Mohith\UserTracking\Api\Data\ContentSearchResultInterface"
+                type="Magento\Framework\Api\SearchResults"/>
+    <!-- Visitor Content Ends-->
+    <!-- Visitor Location Begins-->
+    <preference for="Mohith\UserTracking\Api\VisitorLocationRepositoryInterface"
+                type="Mohith\UserTracking\Model\VisitorLocationRepository"/>
+    <preference for="Mohith\UserTracking\Api\Data\VisitorLocationInterface"
+                type="Mohith\UserTracking\Model\VisitorLocation"/>
+    <preference for="Mohith\UserTracking\Api\Data\VisitorLocationSearchResultInterface"
+                type="Magento\Framework\Api\SearchResults"/>
+    <!-- Visitor Location Ends-->
+    <!-- Catalog Listing Begins -->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="user_tracking_catalog_listing_data_source" xsi:type="string">
+                    Mohith\UserTracking\Model\ResourceModel\Catalog\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Mohith\UserTracking\Model\ResourceModel\Catalog\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mohith_catalog_user_experience</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Mohith\UserTracking\Model\ResourceModel\Catalog
+            </argument>
+        </arguments>
+    </virtualType>
+    <!-- Catalog Listing Ends -->
+    <!-- Content Listing Begins -->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="user_tracking_content_listing_data_source" xsi:type="string">
+                    Mohith\UserTracking\Model\ResourceModel\Content\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Mohith\UserTracking\Model\ResourceModel\Content\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mohith_content_user_experience</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Mohith\UserTracking\Model\ResourceModel\Content
+            </argument>
+        </arguments>
+    </virtualType>
+    <!-- Content Listing Ends -->
+    <!-- User Location Listing Begins -->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="user_tracking_location_listing_data_source" xsi:type="string">
+                    Mohith\UserTracking\Model\ResourceModel\VisitorLocation\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Mohith\UserTracking\Model\ResourceModel\VisitorLocation\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mohith_visitor_location</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Mohith\UserTracking\Model\ResourceModel\VisitorLocation
+            </argument>
+        </arguments>
+    </virtualType>
+    <!-- User Location Listing Ends -->
+</config>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mohith_UserTracking::visitor_tracking" title="User Tracking" module="Mohith_UserTracking"
+             sortOrder="51"
+             resource="Mohith_UserTracking::visitor_tracking"/>
+        <add id="Mohith_UserTracking::visitor_catalog" title="User Viewed Catalog Pages" module="Mohith_UserTracking"
+             sortOrder="10"
+             action="user_tracking/catalog" resource="Mohith_UserTracking::visitor_catalog"
+             parent="Mohith_UserTracking::visitor_tracking"/>
+        <add id="Mohith_UserTracking::visitor_content" title="User Viewed Content Pages" module="Mohith_UserTracking"
+             sortOrder="10"
+             action="user_tracking/content" resource="Mohith_UserTracking::visitor_content"
+             parent="Mohith_UserTracking::visitor_tracking"/>
+        <add id="Mohith_UserTracking::visitor_location" title="User Location Details" module="Mohith_UserTracking"
+             sortOrder="10"
+             action="user_tracking/location" resource="Mohith_UserTracking::visitor_location"
+             parent="Mohith_UserTracking::visitor_tracking"/>
+        <add id="Mohith_UserTracking::visitor_tracking_configuration" title="Configuration" module="Mohith_UserTracking"
+             sortOrder="99" parent="Mohith_UserTracking::visitor_tracking"
+             action="adminhtml/system_config/edit/section/user_tracking"
+             resource="Mohith_UserTracking::visitor_tracking_configuration"/>
+    </menu>
+</config>

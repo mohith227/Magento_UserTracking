@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mohith" translate="label" sortOrder="10">
+            <label>Mohith</label>
+        </tab>
+        <section id="user_tracking" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>User Tracking</label>
+            <tab>mohith</tab>
+            <resource>Mohith_UserTracking::user_tracking_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="free_geo_ip_url" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0">
+                    <label>Free Geo IP URL</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <comment><![CDATA[Enter the valid <a href='https://freegeoip.app/'>Free geo ip</a> URL.]]></comment>
+                </field>
+                <field id="free_geo_ip_api_key" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0">
+                    <label>Free Geo IP API Key</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <comment><![CDATA[<a href='https://freegeoip.app/'>Create an Account In Free geo ip</a> And Enter the valid Key.]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

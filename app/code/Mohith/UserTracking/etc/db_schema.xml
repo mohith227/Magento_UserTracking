@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="mohith_visitor" resource="default" engine="innodb"
+           comment="mohith_visitor table">
+        <column xsi:type="int" name="entity_id" unsigned="false" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="int" name="visitor_id" nullable="false" comment="Visitor ID"/>
+        <column xsi:type="varchar" name="session_id" nullable="false" length="255" comment="Session ID"/>
+        <column xsi:type="varchar" name="ip_address" nullable="false" length="255" comment="Ip Address"/>
+        <column xsi:type="varchar" name="latitude" nullable="true" length="255" comment="Latitude"/>
+        <column xsi:type="varchar" name="longitude" nullable="true" length="255" comment="Longitude"/>
+        <column xsi:type="timestamp" name="created_at" default="CURRENT_TIMESTAMP"
+                on_update="false" nullable="false" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" default="CURRENT_TIMESTAMP"
+                on_update="true" nullable="true" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+    <table name="mohith_catalog_user_experience" resource="default" engine="innodb"
+           comment="mohith catalog user experience table">
+        <column xsi:type="int" name="catalog_id" unsigned="false" nullable="false" identity="true"
+                comment="Catalog ID"/>
+        <column xsi:type="int" name="visitor_id" nullable="true" default="0" comment="Visitor ID"/>
+        <column xsi:type="int" name="customer_id" nullable="true" default="0" comment="Customer ID"/>
+        <column xsi:type="varchar" name="customer_email" nullable="true" default="NA" length="255"
+                comment="Customer Email"/>
+        <column xsi:type="varchar" name="customer_group" nullable="true" length="255" comment="Customer Group"/>
+        <column xsi:type="int" name="product_id" nullable="true" default="0" comment="Product ID"/>
+        <column xsi:type="varchar" name="product_sku" nullable="true" default="NA" length="255" comment="Product SKU"/>
+        <column xsi:type="int" name="category_id" nullable="true" default="0" comment="Category ID"/>
+        <column xsi:type="varchar" name="category_name" nullable="true" default="NA" length="255"
+                comment="Category Name"/>
+        <column xsi:type="varchar" name="event_type" nullable="true" length="255" comment="Event Type"/>
+        <column xsi:type="timestamp" name="created_at" default="CURRENT_TIMESTAMP"
+                on_update="false" nullable="false" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" default="CURRENT_TIMESTAMP"
+                on_update="true" nullable="true" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="catalog_id"/>
+        </constraint>
+    </table>
+    <table name="mohith_content_user_experience" resource="default" engine="innodb"
+           comment="mohith catalog user experience table">
+        <column xsi:type="int" name="content_id" unsigned="false" nullable="false" identity="true"
+                comment="Content ID"/>
+        <column xsi:type="int" name="visitor_id" nullable="true" default="0" comment="Visitor ID"/>
+        <column xsi:type="int" name="customer_id" nullable="true" default="0" comment="Customer ID"/>
+        <column xsi:type="varchar" name="customer_email" nullable="true" default="NA" length="255"
+                comment="Customer Email"/>
+        <column xsi:type="varchar" name="customer_group" nullable="true" length="255" comment="Customer Group"/>
+        <column xsi:type="int" name="page_id" nullable="true" comment="Page ID"/>
+        <column xsi:type="varchar" name="page_identifier" nullable="true" length="255" comment="Page Identifier"/>
+        <column xsi:type="varchar" name="page_name" nullable="true" length="255" comment="Page Name"/>
+        <column xsi:type="timestamp" name="created_at" default="CURRENT_TIMESTAMP"
+                on_update="false" nullable="false" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" default="CURRENT_TIMESTAMP"
+                on_update="true" nullable="true" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="content_id"/>
+        </constraint>
+    </table>
+    <table name="mohith_visitor_location" resource="default" engine="innodb"
+           comment="mohith_visitor location table">
+        <column xsi:type="int" name="entity_id" unsigned="false" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="int" name="visitor_id" nullable="false" default="0" comment="Visitor ID"/>
+        <column xsi:type="int" name="customer_id" nullable="true" default="0" comment="Customer ID"/>
+        <column xsi:type="varchar" name="customer_email" nullable="true" default="NA" length="255"
+                comment="Customer Email"/>
+        <column xsi:type="varchar" name="customer_group" nullable="true" length="255" comment="Customer Group"/>
+        <column xsi:type="varchar" name="ip_address" nullable="false" length="255" comment="Ip Address"/>
+        <column xsi:type="varchar" name="browser_os" nullable="true" length="255" comment="Browser OS"/>
+        <column xsi:type="varchar" name="country_name" nullable="true" length="255" comment="Country Name"/>
+        <column xsi:type="varchar" name="country_code" nullable="true" length="255" comment="Country Code"/>
+        <column xsi:type="varchar" name="region_name" nullable="true" length="255" comment="Region Name"/>
+        <column xsi:type="varchar" name="region_code" nullable="true" length="255" comment="Region Code"/>
+        <column xsi:type="varchar" name="city" nullable="true" length="255" comment="City"/>
+        <column xsi:type="varchar" name="zip_code" nullable="true" length="255" comment="Zip Code"/>
+        <column xsi:type="varchar" name="time_zone" nullable="true" length="255" comment="Time Zone"/>
+        <column xsi:type="timestamp" name="created_at" default="CURRENT_TIMESTAMP"
+                on_update="false" nullable="false" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" default="CURRENT_TIMESTAMP"
+                on_update="true" nullable="true" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>
