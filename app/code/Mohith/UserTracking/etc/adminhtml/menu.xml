@@ -4,7 +4,9 @@
     <menu>
         <add id="Mohith_UserTracking::visitor_tracking" title="User Tracking" module="Mohith_UserTracking"
              sortOrder="51"
-             resource="Mohith_UserTracking::visitor_tracking"/>
+             resource="Mohith_UserTracking::visitor_tracking"
+             dependsOnConfig="user_tracking/general/enable"
+        />
         <add id="Mohith_UserTracking::visitor_catalog" title="User Viewed Catalog Pages" module="Mohith_UserTracking"
              sortOrder="10"
              action="user_tracking/catalog" resource="Mohith_UserTracking::visitor_catalog"
